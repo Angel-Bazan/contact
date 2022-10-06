@@ -57,18 +57,6 @@ const Form = (props) => {
   };
 
   const handleSubmit = (e) => {
-    // let emptyContacts = {
-    //   firstname: "",
-    //   lastname: "",
-    //   email: "",
-    //   note: "",
-    //   mobile: "",
-    //   address: "",
-    // };
-    // e.preventDefault();
-    // setContacts(contacts);
-    // postContacts(contacts);
-    // setContacts(emptyContacts);
     e.preventDefault();
     postContacts(contacts)
   };
@@ -77,7 +65,7 @@ const Form = (props) => {
         <form onSubmit={handleSubmit}>
           <fieldset>
             
-              <label>First Name</label>
+              <label htmlFor="add-user-firstName" >First Name</label>
               <br />
               <input
                 type="text"
@@ -88,7 +76,7 @@ const Form = (props) => {
             
 
             <p>
-              <label>Last Name </label>
+              <label htmlFor="add-user-lastName">Last Name </label>
               <br />
               <input
                 type="text"
@@ -99,7 +87,7 @@ const Form = (props) => {
             </p>
 
             <p>
-              <label>Mobile </label>
+              <label htmlFor="add-user-mobile">Mobile </label>
               <br />
               <input
                 type="tel"
