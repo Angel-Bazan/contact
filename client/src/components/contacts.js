@@ -70,8 +70,8 @@ const Contacts = () => {
                   <strong>address:</strong>
                   {contact.address}
                   <br />
-                  <button
-                    className=""
+                  <button 
+                    className="btn btn-primary"
                     onClick={() => {
                       setFirstName(contact.firstname);
                       setLastName(contact.lastname);
@@ -99,8 +99,8 @@ const Contacts = () => {
           );
         })}
       </ul>
-      <div style ={{display: id=== -1 ? "none" : "block"}}>
-        {/* className = id===-1? d-none : d-block */}
+      <div className ={ id=== -1 ? "d-none" : "d-block"}>
+        
         <label htmlFor="edit-user-firstName">First Name</label>
         <input
           id="edit-user-firstName"
@@ -134,7 +134,7 @@ const Contacts = () => {
         />{" "}
         <br />
         <br />
-        <label htmlFor="edit-user-text">Text</label>
+        <label htmlFor="edit-user-text">Mobile</label>
         <input
           id="edit-user-text"
           type="text"
@@ -167,7 +167,7 @@ const Contacts = () => {
         />{" "}
         <br />
         <br />
-        <button onClick={editContact}>Update User</button>
+        <button className="btn btn-primary" onClick={editContact}>Update User</button>
       </div>
       <Form addContacts={addContacts} />
     </section>

@@ -73,8 +73,8 @@ app.delete('/api/contacts/:id',  async (req, res) => {
 app.put('/api/contacts/:contactId', cors(), async (req, res) => {
   const contactId = req.params.contactId;
   const updatedContact = { id: req.body.id, firstName: req.body.firstname, lastName: req.body.lastname, mobile: req.body.mobile, email: req.body.email, address: req.body.address, note: req.body.note }
-  const query = 'UPDATE contacts SET  firstname=$1, lastname=$2 WHERE id=$3 RETURNING *';
-  const values = [updatedContact.firstName, updatedContact.lastName, contactId];
+  const query = 'UPDATE contacts SET  firstname=$1, lastname=$2, mobile=$3 WHERE id=$4 RETURNING *';
+  const values = [updatedContact.firstName, updatedContact.lastName, updatedContact.mobile, contactId];
   try{
     const updated = await db.query(query, values); 
     console.log('updated', updated);
